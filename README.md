@@ -1,3 +1,5 @@
+# [Demo](https://still-savannah-12071.herokuapp.com/)
+
 # Simple React Slider
 
 Created with [Create React App](https://github.com/facebookincubator/create-react-app)
