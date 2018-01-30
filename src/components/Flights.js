@@ -9,13 +9,16 @@ import CardFlight from './CardFlight.js'
 import Loader from './Loader.js'
 
 const FlightsList = styled.div`
+	display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 	margin: 0 auto;
 	width: 700px;
 
 	@media (max-width: 767px) {
 		width: 320px;
 	}
-`;
+`
 
 class Flights extends Component {
 	componentWillMount() {

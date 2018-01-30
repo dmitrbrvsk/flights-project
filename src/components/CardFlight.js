@@ -21,7 +21,7 @@ const Flight = styled.div`
 		}
 
 		&:last-child {
-			margin-right: 0;
+			margin: 25px 0;
 		}
   }
 
@@ -30,7 +30,7 @@ const Flight = styled.div`
 			margin-bottom: 25px;
 		}
 	}
-`;
+`
 
 const ArrowUp = styled.div`
 	display: inline-block;
