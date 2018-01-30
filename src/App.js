@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Flights from './components/Flights.js'
 import 'semantic-ui-css/semantic.min.css'
-import logo from './air.png'
+import logo from './images/air.png'
 import './App.css'
 
 class App extends Component {

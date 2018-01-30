@@ -6,26 +6,38 @@ import * as flightsAction from '../actions/Flights'
 import styled from 'styled-components'
 
 import CardFlight from './CardFlight.js'
+import Loader from './Loader.js'
 
 const FlightsList = styled.div`
 	margin: 0 auto;
 	width: 700px;
+
+	@media (max-width: 768px) {
+		width: 90%;
+	}
 `;
 
 class Flights extends Component {
 	componentWillMount() {
+		console.log(this.props)
     this.props.actions.fetchFlights()
   }
 	render() {
 		return (
-			<FlightsList>
-				{this.props.flights.flights.map((flight, indx) => {
-					return <CardFlight
-						key={flight.id}
-						data={flight}
-					/>
-				})}
-			</FlightsList>
+			<div>
+				{this.props.flights.loading ? (
+					<Loader />
+				) : (
+					<FlightsList>
+						{this.props.flights.flights.map((flight, indx) => {
+							return <CardFlight
+								key={flight.id}
+								data={flight}
+							/>
+						})}
+					</FlightsList>
+				)}
+			</div>
 		)
 	}
 }

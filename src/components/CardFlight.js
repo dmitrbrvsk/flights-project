@@ -15,12 +15,20 @@ const Flight = styled.div`
     transform: translateY(-10px)
   }
 
-	&:nth-child(2n+1) {
-		margin-right: 20px;
-	}
+	@media (min-width: 768px) {
+    &:nth-child(2n+1) {
+			margin-right: 20px;
+		}
 
-	&:last-child {
-		margin-right: 0;
+		&:last-child {
+			margin-right: 0;
+		}
+  }
+
+	@media (max-width: 768px) {
+		&:last-child {
+			margin-bottom: 25px;
+		}
 	}
 `;
 
