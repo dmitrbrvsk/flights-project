@@ -12,14 +12,13 @@ const FlightsList = styled.div`
 	margin: 0 auto;
 	width: 700px;
 
-	@media (max-width: 768px) {
-		width: 90%;
+	@media (max-width: 767px) {
+		width: 320px;
 	}
 `;
 
 class Flights extends Component {
 	componentWillMount() {
-		console.log(this.props)
     this.props.actions.fetchFlights()
   }
 	render() {
