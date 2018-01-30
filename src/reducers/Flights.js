@@ -16,7 +16,6 @@ export let flightsReducer = (state = initialState, action) => {
 				...state,
 				loading: true
 			}
-			break
 
 		case FETCH_FLIGHTS_SUCCESS:
 			return {
@@ -24,7 +23,6 @@ export let flightsReducer = (state = initialState, action) => {
 				loading: false,
 				flights: action.payload.results
 			}
-			break
 
       case FETCH_FLIGHTS_FAILURE:
         return {
@@ -32,9 +30,8 @@ export let flightsReducer = (state = initialState, action) => {
           loading: false,
           flights: []
 				}
-				break
 
-		default:
-			return state
+			default:
+				return state
   }
 }

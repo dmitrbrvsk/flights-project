@@ -8,8 +8,8 @@ import styled from 'styled-components'
 import CardFlight from './CardFlight.js'
 
 const FlightsList = styled.div`
-	display: flex;
-	justify-content: center;
+	margin: 0 auto;
+	width: 700px;
 `;
 
 class Flights extends Component {
@@ -21,7 +21,7 @@ class Flights extends Component {
 			<FlightsList>
 				{this.props.flights.flights.map((flight, indx) => {
 					return <CardFlight
-						key={indx}
+						key={flight.id}
 						data={flight}
 					/>
 				})}
