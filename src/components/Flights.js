@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as flightsAction from '../actions/Flights'
@@ -21,9 +21,10 @@ const FlightsList = styled.div`
 	}
 `
 
-class Flights extends Component {
+class Flights extends PureComponent {
 	state = {
-		filter_flights: []
+		filter_flights: [],
+		selected_carrier: null
 	}
 
 	componentWillMount() {
@@ -32,20 +33,28 @@ class Flights extends Component {
 
 	getFlightsCarrier = (e) => {
 		const selectedCarrier = e.target.value
-		const filterFlights = this.props.flights.flights.filter(flight => flight.carrier === selectedCarrier)
-		this.setState({ ...this.state, filter_flights: filterFlights })
+		const filterFlights = this.props.flights.flights_list.filter(flight => flight.carrier === selectedCarrier)
+		this.setState({
+			filter_flights: filterFlights,
+			selected_carrier: selectedCarrier
+		})
 	}
 
 	render() {
-		const carriers = [...new Set(this.props.flights.flights.map(flight => flight.carrier))]
-		const flights = this.state.filter_flights.length > 0 ? this.state.filter_flights : this.props.flights.flights
+		const carriers = [...new Set(this.props.flights.flights_list.map(flight => flight.carrier)), 'Все авиакомании']
+		const flights = this.state.filter_flights.length > 0 ? this.state.filter_flights : this.props.flights.flights_list
 		return (
 			<div>
 				{this.props.flights.loading ? (
 					<Loader />
 				) : (
 					<FlightsList>
-						<Select2 items={carriers} onChange={this.getFlightsCarrier} />
+						<Select2
+							onChange={this.getFlightsCarrier}
+							items={carriers}
+							value={this.state.selected_carrier}
+							defaultValue={carriers.slice(-1)[0]}
+						/>
 						<div className='flights-container'>
 							{flights.map((flight, indx) => {
 								return <CardFlight

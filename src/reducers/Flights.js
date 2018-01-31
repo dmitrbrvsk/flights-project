@@ -5,7 +5,7 @@ import {
  } from '../constants'
 
 const initialState = {
-	flights: [],
+	flights_list: [],
 	loading: false
 }
 
@@ -21,14 +21,14 @@ export let flightsReducer = (state = initialState, action) => {
 			return {
 				...state,
 				loading: false,
-				flights: action.payload.results
+				flights_list: action.payload.results
 			}
 
       case FETCH_FLIGHTS_FAILURE:
         return {
 					...state,
           loading: false,
-          flights: []
+          flights_list: []
 				}
 
 			default:

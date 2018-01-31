@@ -12,7 +12,7 @@ const Flight = styled.div`
 	cursor: pointer;
 
   &:hover {
-    transform: translateY(-10px)
+    transform: translateY(-10px);
   }
 
 	@media (min-width: 768px) {
@@ -34,12 +34,12 @@ const Flight = styled.div`
 
 const ArrowUp = styled.div`
 	display: inline-block;
-	transform: rotate(0)
+	transform: rotate(0);
 `
 
 const ArrowDown = styled.div`
 	display: inline-block;
-	transform: rotate(90deg)
+	transform: rotate(90deg);
 `
 const CardFlightHead = styled.div`
 	width: 260px;
@@ -56,9 +56,7 @@ const CardFlight = props => (
 					</CardFlightHead>
 				</Card.Header>
 				<Card.Meta>
-					<span className='date'>
-						номер рейса № {props.data.id}
-					</span>
+					<span className='date'>рейс № {props.data.id}</span>
 				</Card.Meta>
 				<Card.Description>
 					<div className='arrival'>

@@ -4,8 +4,8 @@ import styled from 'styled-components'
 const Dropdown = styled.div`
 	display: block;
 	position: relative;
-	width: 500px;
-  margin-top: 10px;
+	width: 600px;
+  margin-top: 25px;
   padding: 0;
 	background-color: #f3f3f3;
 	border: 1px solid #bbb;
@@ -19,9 +19,13 @@ const Dropdown = styled.div`
 		margin-top: -4px;
 		width: 9px;
 		height: 8px;
-		background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 12'%3E%3Cpolygon fill='rgb(102,102,102)' points='8,12 0,0 16,0'/%3E%3C/svg%3E") 0 0 no-repeat;
+		background: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 12'%3E%3Cpolygon fill='rgb(102,102,102)' points='8,12 0,0 16,0'/%3E%3C/svg%3E') 0 0 no-repeat;
 		z-index: 2;
 		pointer-events: none;
+	}
+
+	@media (max-width: 767px) {
+		width: 90%;
 	}
 `
 
@@ -41,11 +45,9 @@ const Select = styled.select`
 const Select2 = props => {
 	return (
 		<Dropdown>
-			<Select onChange={props.onChange}>
+			<Select onChange={props.onChange} value={props.value || props.defaultValue}>
 				{props.items.map((item, indx) => {
-					return (
-						<option key={indx} value={item}>{item}</option>
-					)
+					return (<option key={indx} value={item}>{item}</option>)
 				})}
 			</Select>
 		</Dropdown>
