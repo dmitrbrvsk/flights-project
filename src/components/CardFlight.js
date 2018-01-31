@@ -46,7 +46,6 @@ const CardFlightHead = styled.div`
   word-wrap: break-word;
 `
 
-
 const CardFlight = props => (
 	<Flight>
 		<Card>
