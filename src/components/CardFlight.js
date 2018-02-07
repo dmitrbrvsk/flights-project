@@ -11,19 +11,19 @@ const Flight = styled.div`
 	transition: transform 200ms ease;
 	cursor: pointer;
 
-  &:hover {
-    transform: translateY(-10px);
-  }
+	&:hover {
+		transform: translateY(-10px);
+	}
 
 	@media (min-width: 768px) {
-    &:nth-child(2n+1) {
+		&:nth-child(2n+1) {
 			margin-right: 20px;
 		}
 
 		&:last-child {
 			margin: 25px 0;
 		}
-  }
+	}
 
 	@media (max-width: 768px) {
 		&:last-child {
@@ -43,7 +43,7 @@ const ArrowDown = styled.div`
 `
 const CardFlightHead = styled.div`
 	width: 260px;
-  word-wrap: break-word;
+	word-wrap: break-word;
 `
 
 const CardFlight = props => (

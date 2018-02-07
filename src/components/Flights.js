@@ -11,8 +11,8 @@ import Select2 from './Select2.js'
 
 const FlightsList = styled.div`
 	display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+	justify-content: center;
+	flex-wrap: wrap;
 	margin: 0 auto;
 	width: 700px;
 
