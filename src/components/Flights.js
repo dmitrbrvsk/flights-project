@@ -71,15 +71,15 @@ class Flights extends PureComponent {
 }
 
 let mapStateToProps = (state) => {
-  return {
-    flights: state.flights
-  }
+	return {
+		flights: state.flights
+	}
 }
 
 let mapDispatchToProps = (dispatch) => {
-  return {
-    actions: bindActionCreators(flightsAction, dispatch)
-  }
+	return {
+		actions: bindActionCreators(flightsAction, dispatch)
+	}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Flights)

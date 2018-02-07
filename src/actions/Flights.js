@@ -6,7 +6,7 @@ import {
 } from '../constants'
 
 export const fetchFlights = payload => {
-  return (dispatch) => {
+	return (dispatch) => {
 		dispatch({
 			type: FETCH_FLIGHTS_REQUEST,
 		})
@@ -26,6 +26,6 @@ export const fetchFlights = payload => {
 					type: FETCH_FLIGHTS_FAILURE
 				})
 				console.log('parsing failed', ex)
-    })
-  }
+		})
+	}
 }

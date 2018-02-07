@@ -37,7 +37,6 @@ const Select = styled.select`
 	background: none;
 	border: 1px solid transparent;
 	outline: none;
-	appearance: none;
 	font-size: 16px;
 	line-height: 1.3;
 `

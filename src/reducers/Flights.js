@@ -24,14 +24,14 @@ export let flightsReducer = (state = initialState, action) => {
 				flights_list: action.payload.results
 			}
 
-      case FETCH_FLIGHTS_FAILURE:
-        return {
-					...state,
-          loading: false,
-          flights_list: []
-				}
+		case FETCH_FLIGHTS_FAILURE:
+			return {
+				...state,
+				loading: false,
+				flights_list: []
+			}
 
-			default:
-				return state
-  }
+		default:
+			return state
+	}
 }
